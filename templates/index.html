@@ -1,0 +1,84 @@
+{% extends "layout.html" %} {% block body %}
+
+<section class="intro">
+  <div class="intro-row">
+    <h1>
+      Secure,scalable, <br />
+      customizable & <span> URL </span> <br />
+      management tools
+    </h1>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias fugit
+      et earum veritatis, sit eligendi. Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Aut, error?
+    </p>
+    <div class="btn-items">
+      <input type="text" class="link-enter" placeholder="Shorten links..!" />
+      <a href="" class="btn">Short It</a>
+    </div>
+  </div>
+  <div class="img-intro">
+    <img
+      src="{{url_for('static',path='images/url_short.svg')}}"
+      alt=""
+      srcset=""
+    />
+  </div>
+</section>
+<hr />
+<section class="features">
+  <!-- <h1>Our  Features</h1> -->
+
+  <div class="fs-row">
+    <div class="fs-items">
+      <div class="fs-icons">
+        <i class="bx bx-analyse"></i>
+      </div>
+      <h2 class="sub-head">Click tracking and analytics</h2>
+      <p class="sub-para">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, ex
+        natus? Ratione debitis sunt consequuntur alias harum reiciendis libero
+        optio.
+      </p>
+    </div>
+    <div class="fs-items">
+      <div class="fs-icons">
+        <i class="bx bxs-customize"></i>
+      </div>
+      <h2 class="sub-head">Customizable Links</h2>
+      <p class="sub-para">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, ex
+        natus? Ratione debitis sunt consequuntur alias harum reiciendis libero
+        optio.
+      </p>
+    </div>
+    <div class="fs-items">
+      <div class="fs-icons">
+        <i class="bx bx-qr"></i>
+      </div>
+      <h2 class="sub-head">QR code generation</h2>
+      <p class="sub-para">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, ex
+        natus? Ratione debitis sunt consequuntur alias harum reiciendis libero
+        optio.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="news-letter">
+  <div class="new-letter-box">
+    <h2 class="sub-head">Subscribe to our Newsletter</h2>
+    <p class="sub-para">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab inventore,
+      nisi sunt molestiae soluta iusto praesentium fuga mollitia. Veritatis
+      natus impedit quia recusandae! A vitae deserunt quia sequi modi eum nam
+      molestias vero harum architecto animi, delectus enim! Lorem ipsum dolor,
+      sit amet consectetur adipisicing elit. Sequi, voluptatem?
+    </p>
+  </div>
+  <div class="btn-items">
+    <input type="text" name="em-add" placeholder="Enter valid email address" />
+    <a href="" class="btn">Submit</a>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,100;1,300;1,600&family=Nunito:wght@200&family=Raleway:wght@300&family=Satisfy&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    /* scroll-behavior: smooth; */
+    /* background-color: #fff; */
+   
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+    --black: #000000;
+    --gray: #838E95;
+    --font-color:#869ab8;
+    --btn-color: #313232;
+    --border-btn:0.0.1rem;
+    --btn-margin:0.5rem;
+    --btn-padding:0.5rem;
+    --h2:1.5rem;
+    --insta-color:#E1306C;
+    --twitter-color:#00ACEE;
+    --facebook-color:#3b5998;
+  }
+
+  /* utility */
+.sub-head{
+    color: var(--black);
+    font-size: 1.18rem;
+    margin: 0.7rem 0.5rem;
+    text-align: left;
+    }
+
+.sub-para{
+    color: var(--font-color);
+    padding: 0.5rem 0.515rem;
+    font-size: 1.111rem;
+    font-family: sans-serif;
+    text-align: left;
+}
+
+.btn{
+    text-decoration: none;
+    border: 0.1rem solid var(--btn-color);
+    border-radius: 0.3rem;
+    color: var(--btn-color);
+    padding: 0.5rem 1.19rem;
+    margin: 0.4rem 0.4rem;
+}
+
+h1{
+    color: var(--black);
+    font-size: 2.3rem;
+    margin: 0.7rem 1.5rem;
+ }
+
+/* navigation bar */
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 0.7rem;
+    flex-wrap: wrap;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    padding: 0.1rem;
+}
+
+.left ul{
+    display: flex;
+}
+
+.left ul li{
+    list-style: none;
+    font-family: sans-serif;
+}
+
+.left ul li a{
+    padding:0.5rem;
+    color: gray;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0.05rem;
+}
+
+.left ul li:first-child a{
+    list-style: none;
+    color: white;
+}
+
+.left ul li:first-child a:hover{
+    color: gray;
+}
+
+.left ul li a:hover{
+    color:white;
+}
+
+.right{
+    display: flex;
+}
+
+.search-icon{
+    color: white;
+    font-size: 1.35rem;
+    padding: 0.5rem 1rem;
+    margin: 0.4rem 0.4rem;
+}
+
+.right .btn:nth-child(1){
+    color: white;
+}
+
+.right .btn:nth-child(2){
+    background-color: var(--blue);
+    color: white;
+}
+
+/* main start  */
+.intro{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #fff;
+    height: 87vh;
+    padding: 0rem 0.5rem;
+}
+
+.intro div
+{
+    padding: 0.4rem 0.5rem;
+    margin: 0.5rem 1rem;
+    /* text-align: center; */
+}
+.intro div h1{
+    color: var(--black);
+    font-size: 2.3rem;
+    margin: 0.7rem 1.5rem;
+    text-align: start;
+ }
+
+.intro div h1 span{
+    font-family: 'Satisfy', cursive;
+    color: dodgerblue;
+    font-size: 2.43rem;
+ }
+
+.intro div p{
+    color: var(--font-color);
+    text-align: start;
+    padding: 0.5rem 1.6rem;
+    font-size: 1.18rem;
+    font-family: sans-serif;
+    line-height: normal;
+}
+.intro div p strong{
+    font-family: 'Satisfy', cursive;
+    color: dodgerblue;
+    font-size: 1.5rem;
+}
+
+.intro div .btn-items{
+    text-align: start;
+}
+
+.intro div .btn-items input{
+    border: 0.1rem solid var(--btn-color);
+    border-radius: 0.3rem;
+    padding: 0.5rem 1.5rem;
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    margin: 0.5rem 0rem;
+}
+.intro div .btn-items  a{
+    background-color: #1e90ff;
+    color: white;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.img-intro img{
+    width: 40vw;
+    height: 60vh;
+}
+
+/* features sections*/
+.features{
+    padding: 1.5rem;
+    /* background-color: #f8f9fa; */
+    background-color: #fff;
+    height: 75vh;
+}
+
+.features h1{
+    font-size: 1.5rem;
+    color: var(--black);
+    padding: 0.5rem 0.1rem;
+    text-align: center;
+}
+
+
+.fs-row{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.features .fs-row .fs-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: 1.2rem 0.89rem;
+    margin: 1.219rem 1rem;
+    border: #f8f9fa;
+    border-radius: 1rem;
+    
+}
+
+.features .fs-row .fs-items .fs-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: 0.2rem 0.89rem;
+    margin: 1.219rem 1rem;
+    border: #f8f9fa;
+    border-radius: 1rem;
+} 
+
+.fs-icons i{
+    font-size: 3.5rem;
+    color: white;
+    background-color: var(--blue);
+    width: 3.5rem;
+    height: 3.5rem;
+    text-align: center;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+/* news letter section */
+.news-letter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: var(--blue);
+    height: 49vh;
+    align-items: start;
+    opacity: 0.9;
+}
+
+
+.news-letter .new-letter-box{
+    text-align: start;
+    padding: 0.5rem 4.5rem;
+    margin-top: 0.5rem;
+}
+
+.news-letter .new-letter-box h2{
+    color: white;
+    font-size: 2rem;
+}
+.news-letter .new-letter-box p{
+    color: var(--black);
+    font-size: 0.791rem;
+    padding: 0.5rem 6.78rem 0.5rem 0.5rem;
+    font-family: sans-serif;
+    margin: 0.1rem 8.1rem 0.1rem 0.1rem;
+}
+
+
+.news-letter .btn-items{
+    /* display: flex; */
+    /* text-align: start; */
+    padding: 0.5rem 4rem;
+    margin: 0.1rem 0.82rem;
+}
+
+.news-letter .btn-items input{
+    border: 0.119rem solid black;  
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.78rem;
+    background-color: white;
+    color: black;
+    font-size: 1.29rem;
+    margin: 0.5rem 0rem;
+    text-align: left;
+}
+
+.news-letter .btn-items a{
+    background-color: black;
+    color: white;
+    font-size: 1.29rem;
+    font-family: serif;
+}
+
+/* footer section */
+.footer{
+    display: flex;
+    padding: 2rem;
+    background-color: var(--black);
+    height: 43vh;
+    justify-content: center;
+}
+
+.footer .col{
+   width: 41%; 
+   padding: 0.5rem 2rem;
+   margin: 0.5rem;
+   background-color: #E1306C;
+}
+
+.footer  .footer-about a{
+    text-decoration: none;
+    color: white;
+}
+.footer  .footer-about .brand-lg{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-size: 1.65rem;
+    font-family: Arial, sans-serif;
+} 
+.footer  .footer-about p{
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    padding-top: 0.4rem;
+    color: var(--gray);
+}
+
+.footer  .footer-about .brand-lg span{
+    font-family: 'Satisfy', cursive;
+    color: dodgerblue;
+    font-size: 1.59rem;  
+}
+
+ .footer  .footer-company h4{
+    color: white;
+    font-size: 1.3rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: left;
+    padding: 0.5rem 0rem;
+ }
+
+ .footer  .footer-company ul li{
+    list-style: none;
+    font-family: sans-serif;
+    padding: 0.34rem 0rem;
+}
+
+.footer  .footer-company ul li a{
+    color: gray;
+    text-decoration: none;
+    font-size: 1rem;
+}
+ .footer  .footer-resources h4{
+    color: white;
+    font-size: 1.11rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: left;
+    padding: 0.5rem 0rem;
+ }
+ 
+ .footer  .footer-resources ul li{
+    list-style: none;
+    font-family: sans-serif;
+    padding: 0.34rem 0rem;
+}
+.footer .footer-resources ul li a{
+    color: gray;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+
+/* sub-footer section*/
+.sub-footer{
+display: flex;
+background-color: black;
+height: 10vh;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+}
+
+.sub-footer .copy-rights p{
+font-size: 1em;
+margin: 0.0912rem 1rem;
+font-family: sans-serif;
+color: white;
+}
+.sub-footer .copy-rights p a{
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family:  Arial, sans-serif;
+}
+.sub-footer .copy-rights p a span{
+    font-family: 'Satisfy', cursive;
+    color: dodgerblue;
+    font-size: 1rem;   
+}
+
+.sub-footer .social-icons a{
+    margin: 0.0912rem 1rem;
+    color: white;
+}
+.sub-footer .social-icons a i{
+    font-size: 1.21rem;
+    /* color: white; */
+ }
+ .sub-footer  .social-icons a i:first-child:hover{
+    color:var(--insta-color);
+ }
+ .sub-footer  .social-icons a i:nth-child(2):hover{
+     color:var(--twitter-color);
+ }
+ .sub-footer .social-icons a i:nth-child(3):hover{
+    color: var(--facebook-color);;
+ }
