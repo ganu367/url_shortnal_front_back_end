@@ -43,11 +43,10 @@ form.addEventListener('submit', (event) => {
         document.getElementById('messages-fields').value = '';
     }})
     .catch((error) => {
-      console.log("errorrrrr: ", error)
       var errorMessage = document.getElementById('error-message');
       errorMessage.classList.add("show-message");
       errorMessage.style.display = "block";
-      errorMessage.innerHTML = "HELLO";
+      errorMessage.innerHTML = error.message;
   
        //clear the text fields after successfully submited the form
       document.getElementById('name-fields').value = '';

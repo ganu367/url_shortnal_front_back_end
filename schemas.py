@@ -5,11 +5,11 @@ from typing import List
 
 
 class UserBase(BaseModel):
-    fullname: str
+    name: str
 
 
 class UserCreate(UserBase):
-    email_address: EmailStr
+    username: EmailStr
     password: str
     confirm_password: str
 

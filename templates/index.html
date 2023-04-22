@@ -13,8 +13,27 @@
       adipisicing elit. Aut, error?
     </p>
     <div class="btn-items">
-      <input type="text" class="link-enter" placeholder="Shorten links..!" />
-      <a href="" class="btn">Short It</a>
+      <input
+        type="url"
+        class="link-enter"
+        placeholder="Paste here long url"
+        id="lng-url-text"
+        required
+      />
+      <button class="btn" id="shrt-lnk-btn" type="submit">Short It</button>
+      <div id="error-message" class="hidden"></div>
+    </div>
+    <div class="btn-items" id="cpy-url-div">
+      <input
+        type="url"
+        class="link-enter"
+        id="shrt-url-text"
+        value=""
+        readonly
+      />
+      <button class="btn" id="shrt-cpy-btn">
+        <i class="bx bxs-copy-alt"></i>
+      </button>
     </div>
   </div>
   <div class="img-intro">

@@ -23,7 +23,7 @@ templates = Jinja2Templates(directory="templates")
 get_db = database.get_db
 
 
-@router.post("/home/app")
+@router.post("/home/app", status_code=200)
 def createUShort(url_fields: schemas.UrlCreate, db: Session = Depends(get_db)):
     get_url = db.query(models.URL).filter(
         models.URL.target_url == url_fields.original_url)
@@ -46,7 +46,7 @@ def createUShort(url_fields: schemas.UrlCreate, db: Session = Depends(get_db)):
             db.commit()
             db.url = key_string
             db.refresh(new_short_url)
-            return {f"http://127.0.0.1:8000/{url_random_key}"}
+            return {"url_short": f"http://127.0.0.1:8000/{url_random_key}", "status": 200}
         except Exception as e:
             db.rollback()
             raise HTTPException(

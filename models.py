@@ -9,8 +9,8 @@ current_date = datetime.today()
 class User(Base):
     __tablename__ = "users"
     id = Column(Integer, primary_key=True, index=True)
-    fullname = Column(String, nullable=False)
-    email_address = Column(String, unique=True)
+    name = Column(String, nullable=False)
+    username = Column(String, unique=True)
     password = Column(String, nullable=False)
     is_active = Column(Boolean, default=True)
     is_admin = Column(Boolean, default=False)

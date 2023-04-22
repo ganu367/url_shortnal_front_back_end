@@ -578,3 +578,34 @@
 #   successMessage.innerText = "form submitted succesfully";
 #   errorMessage.classList.remove('show-message');
 # }
+
+
+# @router.post("/login", status_code=status.HTTP_200_OK)
+# def login(request: Request, request_pass: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
+#     # def login(request: Request, username: str = Form(...), password: str = Form(...), db: Session = Depends(get_db)):
+#     val_user = db.query(models.User).filter(
+#         models.User.username == request_pass.username)
+#     print(request_pass.username)
+#     print(request_pass.password)
+
+#     errors = []
+#     if not val_user.first():
+#         # raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+#         # detail="User does not exists")
+#         errors.append("User does not exists")
+#         return templates.TemplateResponse("signin.html", {"request": request, "errors": errors})
+#     else:
+#         # verify password between requesting by a user & database password
+#         if not hashing.Hash.verify(val_user.first().password, request_pass.password):
+#             # raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+#             #                     detail="Incorrect Passwords")
+
+#             errors.append("Incorrect Passwords")
+#             return templates.TemplateResponse("signin.html", {"request": request, "errors": errors})
+#         else:
+#             access_token = tokens.create_access_token(data={"user": {
+#                 "username": val_user.first().username, "isAdmin": val_user.first().is_admin}})
+
+#             # return {"access_token": access_token, "token_type": "bearer"}
+#             return templates.TemplateResponse("sigin.html", {"request": request, "access_token": access_token, "token_type": "bearer"})
+#             # return RedirectResponse("/", status_code=303)
