@@ -35,12 +35,12 @@ sign_up_form.addEventListener('submit', (event) => {
     })
     .then(response => response.json())
     .then((response) => {
-      if (response.status_code === 200)
+      if (response.status === 200)
       {
         var successMessage = document.getElementById('success-message');
         successMessage.classList.add("show-message");
         successMessage.style.display = "block";
-        successMessage.innerHTML = 'Successfully account created';
+        successMessage.innerHTML = 'Successfully! Your account has been created. Please Login';
     
         //clear the text fields after successfully submited the signup form
         document.getElementById('name').value = '';
@@ -115,6 +115,7 @@ function isValidEmailPattern(usernameValue){
 
 function validatePassword(){
  const passwordValue = password_field.value.trim();
+//  const confirmPassValue = confirm_password_field.value.trim();
  if(passwordValue===''){
   setError('password fields is required');
   return false;
@@ -139,20 +140,20 @@ function validateConfrimPassword(){
 
 //pasword toggel function
 function createPassowrd() {
-    var passHideIcon = document.getElementById("hide-pass-icon");
-    var passShowIcon = document.getElementById("show-pass-icon");
-    var passInput = document.getElementById("pass");
+  var passHideIcon = document.getElementById("hide-pass-icon");
+  var passShowIcon = document.getElementById("show-pass-icon");
+  var passInput = document.getElementById("pass");
 
-    if (passInput.type === "password") {
-        passInput.type = "text";
-        passShowIcon.style.display = "block"
-        passHideIcon.style.display = "none"
+  if (passInput.type === "password") {
+     passInput.type = "text";
+     passShowIcon.style.display = "block"
+     passHideIcon.style.display = "none"
 
-    } else {
-        passInput.type = "password";
-        passShowIcon.style.display = "none"
-        passHideIcon.style.display = "block"
-    }
+  } else {
+     passInput.type = "password";
+     passShowIcon.style.display = "none"
+     passHideIcon.style.display = "block"
+  }
   }
 function rePassowrd() {
     var rePassHideIcon = document.getElementById("hide-re-pass-icon");

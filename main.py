@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, status
 from fastapi.responses import RedirectResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -39,9 +39,9 @@ def loginUser(request: Request):
     return templates.TemplateResponse("sign_up.html", {"request": request, "title": "Sign Up"})
 
 
-@app.get("/dashboard.html", response_class=HTMLResponse)
-def home(request: Request):
-    return templates.TemplateResponse("dashboard.html", {"request": request, "title": "Dashboard-Manage your link"})
+@app.get("/dashboard", response_class=HTMLResponse)
+def dashboard(request: Request):
+    return templates.TemplateResponse("dashboard.html", {"request": request, "title": "Dashboard - Manage Your Links"})
 
 
 @app.get("/contact_us", response_class=HTMLResponse)

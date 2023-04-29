@@ -10,13 +10,15 @@ import tokens
 import schemas
 import oauth2
 from fastapi.security import OAuth2PasswordRequestForm
+import os
 
 router = APIRouter(prefix="/auth", tags=["Authentication"])
 
 
 router.mount("/static", StaticFiles(directory="static"), name="static")
 
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(
+    directory=os.path.abspath(os.path.expanduser('templates')))
 
 get_db = database.get_db
 
@@ -35,19 +37,16 @@ def login(response: Response, request: Request, request_detail: OAuth2PasswordRe
         if not hashing.Hash.verify(val_user.first().password, request_detail.password):
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                                 detail="Incorrect Passwords")
-
         else:
             jwt_token = tokens.create_access_token(data={"user": {
                 "username": val_user.first().username, "isAdmin": val_user.first().is_admin}})
 
-            # return {"access_token": access_token, "token_type": "bearer", "status": 200}
-
-            response = templates.TemplateResponse(
-                "/dashboard.html", {"request": request, "status": 200})
+            response = RedirectResponse(
+                url='/dashboard', status_code=status.HTTP_302_FOUND)
             response.set_cookie(key="access_token",
                                 value=f"Bearer {jwt_token}", httponly=True)
-            # return {"access_token": access_token, "token_type": "bearer", "status": 200}
-            return response
+
+            return {"response": response, "status": 200}
 
 
 @router.put("/update-password", status_code=status.HTTP_202_ACCEPTED)

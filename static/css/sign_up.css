@@ -132,16 +132,9 @@ form .input_box .icon {
   font-size: 1.5rem;
   cursor: pointer;
 }
-form .input_box #show-pass-icon,
+form .input_box #hide-pass-icon,
 #hide-re-pass-icon {
   display: none;
-}
-
-form .forget_div {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1.8rem;
-  padding: 0.4rem 0rem;
 }
 
 /* form .option_div .check_box {
@@ -157,16 +150,21 @@ form .forget_div {
     color: #333;
   } */
 
-form .forget_div a {
-  font-size: 0.8rem;
+form .login_div {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.4rem;
+  padding: 0.2rem 0rem;
+}
+form .login_div a {
   color: hwb(225 0% 0%);
-  text-decoration: none;
 }
 
 form .btn-submit {
   width: 100%;
   position: relative;
   text-align: center;
+  margin-top: 1.4rem;
 }
 form .btn-submit button {
   background: var(--blue);

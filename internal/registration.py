@@ -37,13 +37,13 @@ def create_user(response: Response, request: Request, user_field: schemas.UserCr
                 jwt_token = tokens.create_access_token(data={"user": {
                     "username": user_field.username, "isAdmin": False}})
 
-                response = templates.TemplateResponse(
-                    "sign_up.html", {"request": request, "status": 200})
+                # response = RedirectResponse(
+                #     "/auth/login", status_code=status.HTTP_302_FOUND)
 
                 response.set_cookie(key="access_token",
                                     value=f"Bearer {jwt_token}", httponly=True)
-                # return {"access_token": access_token, "token_type": "bearer", "status": 200}
-                return response
+
+                return {"response": response, "status": 200}
             except Exception as e:
                 db.rollback()
                 raise HTTPException(status_code=status.HTTP_302_FOUND,

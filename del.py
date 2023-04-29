@@ -609,3 +609,14 @@
 #             # return {"access_token": access_token, "token_type": "bearer"}
 #             return templates.TemplateResponse("sigin.html", {"request": request, "access_token": access_token, "token_type": "bearer"})
 #             # return RedirectResponse("/", status_code=303)
+
+ # return {"access_token": access_token, "token_type": "bearer", "status": 200}
+
+            # response = templates.TemplateResponse(
+            #     "/dashboard.html", {"request": request, "status": 200})
+            # response = RedirectResponse(url="/dashboard.html")
+            # print(response)
+            # response.set_cookie(key="access_token",
+            #                     value=f"Bearer {jwt_token}", httponly=True)
+            # # return {"access_token": access_token, "token_type": "bearer", "status": 200}
+            # return response

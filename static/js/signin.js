@@ -21,7 +21,9 @@ signForm.addEventListener('submit', (event) => {
 
     fetch('http://127.0.0.1:8000/auth/login', {
       method: 'POST',
+      redirect: 'follow',
       headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
         'accept': 'application/json'
       },
       body: new URLSearchParams({
@@ -35,18 +37,18 @@ signForm.addEventListener('submit', (event) => {
     })
     .then(response => response.json())
     .then((response) => {
-      console.log("Data goes like this",response);
       if (response.status === 200)
       {
         var successMessage = document.getElementById('success-message');
         successMessage.classList.add("show-message");
         successMessage.style.display = "block";
         successMessage.innerHTML = 'Successfully login';
-    
+
+        window.location.href = '/dashboard';
+       
         //clear the text fields after successfully submited the login form
         document.getElementById('username').value = '';
         document.getElementById('pass').value = '';
-
       }else{
         var errorMessage = document.getElementById('error-message');
         errorMessage.classList.add("show-message");
@@ -63,6 +65,7 @@ signForm.addEventListener('submit', (event) => {
       errorMessage.classList.add("show-message");
       errorMessage.style.display = "block";
       errorMessage.innerHTML = error.message;
+      console.log(error.message)
   
        //clear the text fields after successfully submited the form
        document.getElementById('username').value = '';
@@ -99,9 +102,6 @@ function validatePassword(){
  if(passwordValue===''){
   setError('password fields is required');
   return false;
- }else if(passwordValue.length<6){
-    setError('password must be atleast 6 characters');
-    return false;
  }
  return true;
 }
@@ -121,12 +121,12 @@ function myPassowrd() {
 
     if (passwordInput.type === "password") {
         passwordInput.type = "text";
-        passwordShowIcon.style.display = "block"
-        passwordHideIcon.style.display = "none"
+        passwordShowIcon.style.display = "none"
+        passwordHideIcon.style.display = "block"
 
     } else {
         passwordInput.type = "password";
-        passwordShowIcon.style.display = "none"
-        passwordHideIcon.style.display = "block"
+        passwordShowIcon.style.display = "block"
+        passwordHideIcon.style.display = "none"
     }
   }

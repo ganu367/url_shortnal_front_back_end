@@ -132,7 +132,7 @@ h1{
     font-size: 1.5rem;
     cursor: pointer;
   }
-  form .input_box #show-password-icon{
+  form .input_box #hide-password-icon{
     display: none;
   }
 
@@ -180,6 +180,17 @@ h1{
     background: var(--button-click-blue);
   } 
 
+
+form .signup_div {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.4rem;
+    padding: 0.2rem 0rem;
+  }
+form .signup_div a {
+    color: hwb(225 0% 0%);
+  }
+  
 /* sub-footer section*/
 .sub-footer{
   display: flex;
